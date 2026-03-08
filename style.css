@@ -1,0 +1,60 @@
+﻿body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#1c1c1c;
+color:white;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:100px 20px;
+background:#2e6b4e;
+color:white;
+}
+
+.btn{
+background:white;
+color:#2e6b4e;
+padding:10px 20px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.cards{
+display:flex;
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter{
+text-align:center;
+padding:50px;
+background:#ddd;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#1c1c1c;
+color:white;
+}
