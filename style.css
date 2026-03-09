@@ -328,3 +328,30 @@ footer{
     margin-top:40px;
   }
 }
+/* ===== Dark Mode ===== */
+body.dark{
+  background:#121212;
+  color:#eee;
+}
+body.dark .navbar{
+  background:#1a1a1a;
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);
+}
+body.dark .post, body.dark .article-content, body.dark .article-sidebar{
+  background:#1f1f1f;
+  color:#eee;
+}
+body.dark .highlight-card{
+  background:linear-gradient(135deg,#3fa2ff,#2e7d5b);
+}
+body.dark .back-link, body.dark nav a{
+  color:#4ec7a3;
+}
+body.dark input, body.dark .newsletter input{
+  background:#333;
+  color:#eee;
+  border:1px solid #555;
+}
+body.dark .newsletter button{
+  background:#3fa2ff;
+}

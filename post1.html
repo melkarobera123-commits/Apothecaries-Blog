@@ -1,58 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Story of Aspirin</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
+<canvas id="moleculeCanvas"></canvas>
+
 <header class="navbar">
-<div class="logo">⚗️ Apothecaries</div>
+  <div class="logo">⚗️ Apothecaries</div>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#posts">Articles</a>
+  </nav>
+  <button id="darkToggle">🌙</button>
 </header>
 
-<section class="about">
-
-<h1>The Story of Aspirin</h1>
-
-<p>
-One of the most famous medicines in the world is
-<em>:contentReference[oaicite:0]{index=0}</em>.
-Its story begins thousands of years ago when people
-used willow bark to relieve pain and fever.
-</p>
-
-<p>
-Ancient Egyptian and Greek physicians noticed that
-extracts from willow trees reduced inflammation.
-The active compound in willow bark was later
-identified as salicin.
-</p>
-
-<p>
-In 1897, chemist
-:contentReference[oaicite:1]{index=1}
-working at
-:contentReference[oaicite:2]{index=2}
-modified salicylic acid to create
-acetylsalicylic acid. This compound was safer
-for the stomach and became the medicine we now
-call aspirin.
-</p>
-
-<p>
-Today aspirin is used for pain relief, fever
-reduction, and prevention of cardiovascular
-disease. Its journey from tree bark to modern
-tablet is one of the most fascinating stories
-in pharmaceutical history.
-</p>
-
-<a href="../index.html">← Back to Blog</a>
-
+<section class="article-hero">
+  <h1>The Story of Aspirin</h1>
+  <p class="article-subtitle">How willow bark became the world's most famous medicine</p>
 </section>
 
+<main class="article-container">
+  <article class="article-content">
+    <p>Long before aspirin existed, people used willow bark for pain and fever relief.</p>
+    <p>In 1897, chemist <strong>Felix Hoffmann</strong> at <strong>Bayer</strong> synthesized acetylsalicylic acid, which became aspirin.</p>
+    <div class="highlight-card">💡 Fun Fact: Aspirin was originally called “Herbalin” in early trials!</div>
+    <a href="../index.html" class="back-link">← Back to Blog</a>
+  </article>
+
+  <aside class="article-sidebar">
+    <h3>Related Topics</h3>
+    <ul>
+      <li>Drug Discovery</li>
+      <li>Medicinal Chemistry</li>
+      <li>Pharmacy History</li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  <p>© 2026 Apothecaries Blog</p>
+</footer>
+
+<script src="../script.js"></script>
+<script src="../molecules.js"></script>
 </body>
 </html>
