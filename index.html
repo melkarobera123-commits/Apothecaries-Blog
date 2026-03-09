@@ -1,207 +1,91 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Apothecaries Blog | Pharmacy, Drug Discovery & Medicinal Chemistry</title>
-
-<meta name="description" content="Apothecaries Blog explores pharmacy history, medicinal chemistry, drug discoveries and the fascinating world of medicines.">
-
+<title>Apothecaries Blog</title>
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+<!-- Floating molecules background -->
+<canvas id="moleculeCanvas"></canvas>
+
 <header class="navbar">
-
-<div class="logo">⚗️ Apothecaries</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#featured">Featured</a>
-<a href="#posts">Blog</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<div class="nav-btn">
-<a href="#newsletter">Subscribe</a>
-</div>
-
+  <div class="logo">⚗️ Apothecaries</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#posts">Articles</a>
+    <a href="#topics">Topics</a>
+    <a href="#about">About</a>
+  </nav>
+  <button id="darkToggle">🌙</button>
 </header>
 
-
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>The Art & Science of Medicines</h1>
-
-<p>Stories of drug discovery, medicinal chemistry, and the hidden history of pharmacy.</p>
-
-<div class="hero-buttons">
-<a href="#posts" class="btn-primary">Explore Articles</a>
-<a href="#about" class="btn-secondary">About Blog</a>
-</div>
-
-</div>
-
+  <h1>Secrets of Medicines</h1>
+  <p>Exploring drug discovery, medicinal chemistry, and pharmacy history</p>
+  <a href="#posts" class="cta">Explore Articles</a>
 </section>
-
 
 <section class="search">
-
-<input type="text" placeholder="Search medicines, pharmacy history, drug discoveries...">
-
+  <input id="searchBar" type="text" placeholder="Search pharmacy topics...">
 </section>
-
-
-<section id="featured" class="featured">
-
-<h2>Featured Article</h2>
-
-<div class="featured-card">
-
-<h3>The Story of Aspirin</h3>
-
-<p>The journey of one of the most famous medicines in history: from willow bark to modern pharmacology.</p>
-
-<a href="posts/post1.html">Read Full Story →</a>
-
-</div>
-
-</section>
-
 
 <section id="posts" class="posts">
-
-<h2>Latest Articles</h2>
-
-<div class="post-grid">
-
-<div class="post">
-<h3>History of Apothecaries</h3>
-<p>How medieval medicine evolved into modern pharmacy.</p>
-<a href="posts/post1.html">Read</a>
-</div>
-
-<div class="post">
-<h3>Drug Discovery Stories</h3>
-<p>Fascinating tales behind life-saving medicines.</p>
-<a href="posts/post2.html">Read</a>
-</div>
-
-<div class="post">
-<h3>Medicinal Chemistry Basics</h3>
-<p>Understanding molecules that heal the human body.</p>
-<a href="#">Read</a>
-</div>
-
-<div class="post">
-<h3>Pharmacy Myths</h3>
-<p>Separating scientific truth from medical myths.</p>
-<a href="#">Read</a>
-</div>
-
-</div>
-
+  <h2>Latest Articles</h2>
+  <div class="post-grid">
+    <div class="post reveal">
+      <h3>Aspirin Story</h3>
+      <p>From willow bark to the most famous medicine</p>
+      <a href="posts/post1.html">Read</a>
+    </div>
+    <div class="post reveal">
+      <h3>Penicillin Discovery</h3>
+      <p>The accidental discovery that revolutionized antibiotics</p>
+      <a href="posts/post2.html">Read</a>
+    </div>
+    <div class="post reveal">
+      <h3>Medicinal Chemistry</h3>
+      <p>The molecular logic behind drug design</p>
+      <a href="posts/post3.html">Read</a>
+    </div>
+    <div class="post reveal">
+      <h3>Pharmacy Myths</h3>
+      <p>Separating scientific evidence from medical folklore</p>
+      <a href="posts/post4.html">Read</a>
+    </div>
+  </div>
 </section>
 
-
-<section class="categories">
-
-<h2>Explore Topics</h2>
-
-<div class="category-grid">
-
-<div class="category">Drug Discovery</div>
-<div class="category">Medicinal Chemistry</div>
-<div class="category">Pharmacy History</div>
-<div class="category">Clinical Pharmacology</div>
-<div class="category">Toxicology</div>
-<div class="category">Pharmaceutical Innovation</div>
-
-</div>
-
+<section id="topics" class="topics">
+  <h2>Explore Topics</h2>
+  <div class="topic-grid">
+    <div class="topic">Drug Discovery</div>
+    <div class="topic">Medicinal Chemistry</div>
+    <div class="topic">Clinical Pharmacology</div>
+    <div class="topic">Toxicology</div>
+    <div class="topic">Pharmacy History</div>
+  </div>
 </section>
-
 
 <section id="about" class="about">
-
-<h2>About Apothecaries Blog</h2>
-
-<p>
-
-Apothecaries Blog explores the science, history, and philosophy of medicines.
-From ancient apothecary traditions to modern medicinal chemistry, we uncover
-the stories behind the drugs that changed human history.
-
-</p>
-
+  <h2>About the Blog</h2>
+  <p>Apothecaries Blog explores the science and stories behind medicines, from ancient herbal traditions to modern pharmaceutical research.</p>
 </section>
 
-
-<section id="newsletter" class="newsletter">
-
-<h2>Join the Apothecaries Circle</h2>
-
-<p>Receive pharmacy stories, drug discoveries, and scientific insights.</p>
-
-<form>
-
-<input type="email" placeholder="Enter your email">
-
-<button type="submit">Subscribe</button>
-
-</form>
-
+<section class="newsletter">
+  <h2>Join the Apothecaries Circle</h2>
+  <input type="email" placeholder="Email">
+  <button>Subscribe</button>
 </section>
-
 
 <footer>
-
-<div class="footer-grid">
-
-<div>
-<h3>Apothecaries Blog</h3>
-<p>Exploring the science and stories behind medicines.</p>
-</div>
-
-<div>
-<h4>Navigation</h4>
-<a href="#">Home</a>
-<a href="#">Blog</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</div>
-
-<div>
-<h4>Topics</h4>
-<a href="#">Drug Discovery</a>
-<a href="#">Medicinal Chemistry</a>
-<a href="#">Pharmacy History</a>
-</div>
-
-<div>
-<h4>Follow</h4>
-<p>Telegram</p>
-<p>Twitter</p>
-<p>YouTube</p>
-</div>
-
-</div>
-
-<p class="copyright">
-© 2026 Apothecaries Blog
-</p>
-
+  <p>© 2026 Apothecaries Blog</p>
 </footer>
 
-
+<script src="script.js"></script>
+<script src="molecules.js"></script>
 </body>
 </html>

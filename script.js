@@ -1,50 +1,27 @@
-﻿const searchBar = document.getElementById("searchBar");
+﻿// Search articles
+const searchBar = document.getElementById("searchBar");
 const posts = document.querySelectorAll(".post");
-
 searchBar.addEventListener("keyup", () => {
-
-let value = searchBar.value.toLowerCase();
-
-posts.forEach(post => {
-
-let text = post.innerText.toLowerCase();
-
-post.style.display = text.includes(value) ? "block" : "none";
-
+  const value = searchBar.value.toLowerCase();
+  posts.forEach(post => {
+    post.style.display = post.innerText.toLowerCase().includes(value) ? "block" : "none";
+  });
 });
 
-});
-
-
-/* Dark Mode */
-
+// Dark mode toggle
 const toggle = document.getElementById("darkToggle");
-
 toggle.addEventListener("click", () => {
-
-document.body.classList.toggle("dark");
-
+  document.body.classList.toggle("dark");
 });
 
-
-/* Scroll reveal animation */
-
+// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
-
 window.addEventListener("scroll", () => {
-
-reveals.forEach(el => {
-
-let windowHeight = window.innerHeight;
-
-let top = el.getBoundingClientRect().top;
-
-if(top < windowHeight - 100){
-
-el.classList.add("show");
-
-}
-
-});
-
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const top = el.getBoundingClientRect().top;
+    if(top < windowHeight - 100){
+      el.classList.add("show");
+    }
+  });
 });
