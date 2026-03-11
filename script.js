@@ -1,4 +1,13 @@
-﻿﻿// ===================== Dark Mode =====================
+﻿﻿// ===================== Global Image Error Handler =====================
+document.addEventListener("error", (e) => {
+  if (e.target.tagName.toLowerCase() === "img") {
+    e.target.onerror = null; // Prevent infinite loop
+    e.target.src = "https://placehold.co/600x400?text=Image+Unavailable";
+    e.target.alt = "Image unavailable";
+  }
+}, true);
+
+// ===================== Dark Mode =====================
 const toggle = document.getElementById("darkToggle");
 
 if (toggle) {
@@ -18,15 +27,19 @@ if (localStorage.getItem("darkMode") === "enabled") {
 
 // ===================== Scroll Reveal =====================
 const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
   reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
     const top = el.getBoundingClientRect().top;
     if(top < windowHeight - 100){
       el.classList.add("show");
     }
   });
-});
+};
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+revealOnScroll(); // Trigger immediately to show visible elements
 
 // ===================== Reading Progress =====================
 const progressBar = document.querySelector(".reading-progress span");
@@ -77,7 +90,7 @@ if (tocLinks.length && tocTargets.length) {
 const searchBar = document.getElementById("searchBar");
 if(searchBar){
   const posts = document.querySelectorAll(".post");
-  searchBar.addEventListener("keyup", () => {
+  searchBar.addEventListener("input", () => {
     const value = searchBar.value.toLowerCase();
     posts.forEach(post => {
       post.style.display = post.innerText.toLowerCase().includes(value) ? "block" : "none";
