@@ -1,18 +1,18 @@
 ﻿// ===================== Dark Mode =====================
 const toggle = document.getElementById("darkToggle");
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  // Save preference in localStorage
-  if(document.body.classList.contains("dark")){
-    localStorage.setItem("darkMode", "enabled");
-  } else {
-    localStorage.setItem("darkMode", "disabled");
-  }
-});
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
+  });
+}
 
-// Load dark mode on page load
-if(localStorage.getItem("darkMode") === "enabled"){
+if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark");
 }
 
@@ -27,6 +27,51 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// ===================== Reading Progress =====================
+const progressBar = document.querySelector(".reading-progress span");
+if (progressBar) {
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = `${progress}%`;
+  };
+
+  window.addEventListener("scroll", updateProgress);
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+}
+
+// ===================== Section Highlighting =====================
+const tocLinks = document.querySelectorAll(".toc a[data-target]");
+const tocTargets = Array.from(tocLinks)
+  .map(link => document.getElementById(link.dataset.target))
+  .filter(Boolean);
+
+if (tocLinks.length && tocTargets.length) {
+  const activateLink = (id) => {
+    tocLinks.forEach(link => {
+      const isActive = link.dataset.target === id;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activateLink(entry.target.id);
+      }
+    });
+  }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+
+  tocTargets.forEach(section => observer.observe(section));
+}
 
 // ===================== Search Articles (Homepage) =====================
 const searchBar = document.getElementById("searchBar");
