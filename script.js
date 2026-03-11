@@ -1,4 +1,4 @@
-﻿// ===================== Dark Mode =====================
+﻿﻿// ===================== Dark Mode =====================
 const toggle = document.getElementById("darkToggle");
 
 if (toggle) {
@@ -82,5 +82,23 @@ if(searchBar){
     posts.forEach(post => {
       post.style.display = post.innerText.toLowerCase().includes(value) ? "block" : "none";
     });
+  });
+}
+
+// ===================== Newsletter Subscription =====================
+const newsletterForm = document.querySelector(".newsletter");
+if (newsletterForm) {
+  const newsletterButton = newsletterForm.querySelector("button");
+  const newsletterInput = newsletterForm.querySelector("input[type='email']");
+
+  newsletterButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent form submission
+    const email = newsletterInput.value;
+    if (email && email.includes("@")) {
+      alert(`Thank you for subscribing with ${email}! You are now part of the Apothecaries Circle.`);
+      newsletterInput.value = ""; // Clear the input
+    } else {
+      alert("Please enter a valid email address to subscribe.");
+    }
   });
 }
