@@ -7,6 +7,15 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+  // Handle image errors immediately (before body loads)
+  document.addEventListener("error", (e) => {
+    if (e.target.tagName.toLowerCase() === "img") {
+      e.target.src = "https://placehold.co/600x400?text=Image+Unavailable";
+      e.target.alt = "Image unavailable";
+    }
+  }, true);
+</script>
 <body>
 
 <header class="navbar">

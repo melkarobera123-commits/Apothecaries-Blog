@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+  // Handle image errors immediately (before body loads)
+  document.addEventListener("error", (e) => {
+    if (e.target.tagName.toLowerCase() === "img") {
+      e.target.src = "https://placehold.co/600x400?text=Image+Unavailable";
+      e.target.alt = "Image unavailable";
+    }
+  }, true);
+</script>
 <body class="post-page">
   <div class="reading-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -33,13 +42,13 @@
         <span>Category: Medical Milestones</span>
       </div>
       <div class="byline">
-        <span>By Amelia Rowe</span>
+        <span>By Robera Melka</span>
         <span>Archivist, Apothecaries Journal</span>
         <span>Updated: March 2026</span>
       </div>
       <div class="metrics-strip">
         <div class="metric"><span>Region</span>London, UK</div>
-        <div class="metric"><span>Era</span>1928�1943</div>
+        <div class="metric"><span>Era</span>1928-1943</div>
         <div class="metric"><span>Discipline</span>Microbiology</div>
         <div class="metric"><span>Focus</span>Antibiotics</div>
       </div>
