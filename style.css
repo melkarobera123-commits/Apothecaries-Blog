@@ -319,9 +319,15 @@ nav a:focus,
 }
 
 .newsletter {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 18px;
-  box-shadow: var(--shadow-soft);
+  max-width: 700px;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  max-width: 7linea0-0rxdient;13degvar(--accent-)var(--accent)
+  padding: 50px 206xx
+  color: white;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border-radius: 16px;
 }
 
 .newsletter input {
@@ -978,8 +984,6 @@ body.dark footer {
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+     transition-duration: 0.01ms !important;
   }
 }
-
