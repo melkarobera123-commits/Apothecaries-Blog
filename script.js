@@ -7,6 +7,14 @@ document.addEventListener("error", (e) => {
   }
 }, true);
 
+// ===================== Active Navigation Link =====================
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll("nav a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
 // ===================== Dark Mode =====================
 const toggle = document.getElementById("darkToggle");
 
@@ -90,11 +98,26 @@ if (tocLinks.length && tocTargets.length) {
 const searchBar = document.getElementById("searchBar");
 if(searchBar){
   const posts = document.querySelectorAll(".post");
+  const postsContainer = document.querySelector(".posts");
+
+  // Create "No Results" message dynamically
+  const noResultsMsg = document.createElement("div");
+  noResultsMsg.className = "no-results";
+  noResultsMsg.textContent = "No articles found matching your search.";
+  noResultsMsg.style.display = "none";
+  if(postsContainer) postsContainer.appendChild(noResultsMsg);
+
   searchBar.addEventListener("input", () => {
     const value = searchBar.value.toLowerCase();
+    let visibleCount = 0;
+
     posts.forEach(post => {
-      post.style.display = post.innerText.toLowerCase().includes(value) ? "block" : "none";
+      const isVisible = post.innerText.toLowerCase().includes(value);
+      post.style.display = isVisible ? "block" : "none";
+      if(isVisible) visibleCount++;
     });
+    
+    noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
   });
 }
 
