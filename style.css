@@ -152,10 +152,16 @@ nav a::after,
 
 nav a.active::after,
 nav a:hover::after,
+nav a:focus::after,
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
 nav a:hover,
 nav a:focus,
 .nav-link:hover,
-  width: 100%;
+.nav-link:focus {
   color: var(--accent-2);
 }
 
@@ -403,10 +409,7 @@ nav a:focus,
   max-width: 700px;
   padding: 50px 20px;
   text-align: center;
-  color: white;
-  max-width: 7linea0-0rxdient;13degvar(--accent-)var(--accent)
-  padding: 50px 206xx
-  color: white;
+  color: #fff;
   background: linear-gradient(135deg, var(--accent-2), var(--accent));
   border-radius: 16px;
 }
