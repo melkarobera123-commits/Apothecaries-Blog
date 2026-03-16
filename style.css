@@ -33,6 +33,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, .deck, .hero p {
+  text-wrap: balance;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -333,7 +337,12 @@ nav a:focus,
 }
 
 .post {
-  background: rgba(255, 255, 255, 0.9);
+  background:
+    radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.6) 40%
+    );
   padding: 26px 24px;
   border-radius: 16px;
   box-shadow: var(--shadow-soft);
@@ -991,6 +1000,34 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* ===== Support / Donate ===== */
+.support-strip {
+  text-align: center;
+  padding: 40px 20px 0;
+  margin-top: 20px;
+  font-family: var(--sans);
+}
+
+.btn-donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-3);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 20px -4px rgba(199, 154, 91, 0.4);
+}
+
+.btn-donate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -4px rgba(199, 154, 91, 0.5);
+  background: #d4a76a;
+}
+
 /* ===== Reveal ===== */
 .reveal {
   opacity: 0;
@@ -1060,7 +1097,12 @@ body.dark .hero-image figcaption {
 }
 
 body.dark .post {
-    background: rgba(30, 34, 44, 0.6);
+  background:
+    radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(40, 44, 54, 1),
+      rgba(30, 34, 44, 0.6) 40%
+    );
 }
 
 body.dark .navbar,

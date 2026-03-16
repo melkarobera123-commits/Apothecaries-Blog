@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Apothecaries Journal explores the science, history, and future of medicine.">
 <title>Apothecaries Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script>
@@ -28,7 +31,7 @@
     <a href="topics.html">Topics</a>
     <a href="about.html">About</a>
   </nav>
-  <button id="darkToggle">🌙</button>
+  <button id="darkToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
 </header>
 
 <div class="issue-bar">
@@ -50,6 +53,7 @@
   </section>
 
   <section class="search">
+    <label class="sr-only" for="searchBar">Search articles</label>
     <input id="searchBar" type="text" placeholder="Search pharmacy topics...">
   </section>
 
@@ -98,6 +102,11 @@
       <button type="submit">Subscribe</button>
     </form>
     <p class="newsletter-privacy">No spam. Unsubscribe anytime.</p>
+  </section>
+
+  <section class="support-strip">
+    <p style="margin-bottom: 16px; color: #6b5a4a;">Find value in our research? Help keep the journal independent.</p>
+    <a href="#" class="btn-donate">☕ Support the Journal</a>
   </section>
 </main>
 
