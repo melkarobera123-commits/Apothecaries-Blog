@@ -3,7 +3,9 @@ const applyImageFallback = (img) => {
   if (img.dataset.fallbackApplied === "1") return;
   img.dataset.fallbackApplied = "1";
   img.src = "images/placeholder.svg";
-  img.alt = "Image unavailable";
+  if (!img.alt) {
+    img.alt = "Apothecaries Journal image placeholder";
+  }
 };
 
 document.addEventListener("error", (e) => {
@@ -145,6 +147,29 @@ if(searchBar){
     
     noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
   });
+}
+
+// ===================== Newsletter Status =====================
+const newsletterStatus = document.querySelector(".newsletter-status");
+if (newsletterStatus) {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("success") === "1") {
+    newsletterStatus.textContent = "Thanks for subscribing. Check your inbox for confirmation.";
+    newsletterStatus.classList.add("success");
+    newsletterStatus.hidden = false;
+  } else if (params.get("error") === "1") {
+    newsletterStatus.textContent = "Something went wrong. Please try again.";
+    newsletterStatus.classList.add("error");
+    newsletterStatus.hidden = false;
+  }
+
+  if (params.has("success") || params.has("error")) {
+    params.delete("success");
+    params.delete("error");
+    const newQuery = params.toString();
+    const newUrl = `${window.location.pathname}${newQuery ? `?${newQuery}` : ""}${window.location.hash}`;
+    window.history.replaceState({}, "", newUrl);
+  }
 }
 
 // ===================== Mouse Spotlight Effect =====================

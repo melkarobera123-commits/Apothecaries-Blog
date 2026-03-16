@@ -427,6 +427,36 @@ nav a:focus,
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.credit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.credit-list li {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.credit-title {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.credit-list a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .newsletter {
   max-width: 700px;
   padding: 50px 20px;
@@ -442,6 +472,15 @@ nav a:focus,
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.newsletter textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 110px;
+  resize: vertical;
+  font-family: var(--sans);
+}
+
 .newsletter-form {
   display: flex;
   align-items: center;
@@ -450,7 +489,8 @@ nav a:focus,
   flex-wrap: wrap;
 }
 
-.newsletter-form input {
+.newsletter-form input,
+.newsletter-form textarea {
   flex: 1 1 220px;
   min-width: 200px;
 }
@@ -488,6 +528,28 @@ button {
 .newsletter button:hover,
 button:hover {
   transform: translateY(-2px);
+}
+
+.newsletter-status {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: #2a2420;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-status.success {
+  border-color: rgba(47, 95, 93, 0.4);
+  background: rgba(47, 95, 93, 0.12);
+  color: #1f3f3d;
+}
+
+.newsletter-status.error {
+  border-color: rgba(138, 75, 43, 0.4);
+  background: rgba(138, 75, 43, 0.12);
+  color: #5a2f1b;
 }
 
 /* ===== Article Page ===== */
@@ -1054,6 +1116,12 @@ footer {
   font-size: 0.9rem;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 footer p {
   margin: 0;
 }
@@ -1084,6 +1152,7 @@ body.dark .post,
 body.dark .newsletter,
 body.dark .takeaways,
 body.dark .topic,
+body.dark .credit-list li,
 body.dark .aside-panel,
 body.dark .stat-card,
 body.dark .data-cell,
@@ -1103,6 +1172,32 @@ body.dark .post {
       rgba(40, 44, 54, 1),
       rgba(30, 34, 44, 0.6) 40%
     );
+}
+
+body.dark .post p,
+body.dark .section-header p,
+body.dark .issue-bar {
+  color: #c8c8c8;
+}
+
+body.dark .newsletter-status {
+  background: rgba(30, 34, 44, 0.85);
+  color: #e6e6e6;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .newsletter-status.success {
+  background: rgba(47, 95, 93, 0.25);
+  color: #d9f0ee;
+}
+
+body.dark .newsletter-status.error {
+  background: rgba(138, 75, 43, 0.25);
+  color: #f5e1d6;
+}
+
+body.dark .credit-title {
+  color: #e6e6e6;
 }
 
 body.dark .navbar,

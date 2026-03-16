@@ -9,15 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script>
-  // Handle image errors immediately (before body loads)
-  document.addEventListener("error", (e) => {
-    if (e.target.tagName.toLowerCase() === "img") {
-      e.target.src = "https://placehold.co/600x400?text=Image+Unavailable";
-      e.target.alt = "Image unavailable";
-    }
-  }, true);
-</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -33,11 +24,6 @@
   </nav>
   <button id="darkToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
 </header>
-
-<div class="issue-bar">
-  <span>Issue 04</span>
-  <div>Modern pharmacy, timeless craft</div>
-</div>
 
 <main id="main">
   <section class="hero">
@@ -63,45 +49,46 @@
       <p>Fresh perspectives from the frontiers of pharmacy and care.</p>
     </div>
     <div class="post reveal">
-      <img src="https://images.unsplash.com/photo-1550627213-265349389a72?auto=format&fit=crop&w=800&q=80" alt="Mortar and pestle with herbs, representing natural medicine origins" loading="lazy">
+      <img src="images/aspirin-hero.jpg" alt="Mortar and pestle used in traditional medicine" loading="lazy">
       <h3>The Story of Aspirin</h3>
       <p>How willow bark became the world's most famous medicine.</p>
       <a href="post1.html">Read More</a>
     </div>
 
     <div class="post reveal">
-      <img src="https://images.unsplash.com/photo-1582719202042-0965637e1520?auto=format&fit=crop&w=800&q=80" alt="Petri dishes in a lab, referencing the discovery of penicillin" loading="lazy">
+      <img src="images/penicillin-hero.jpg" alt="Penicillium conidiophores under a microscope" loading="lazy">
       <h3>Penicillin Discovery</h3>
       <p>The accidental discovery that changed medicine forever.</p>
       <a href="post2.html">Read More</a>
     </div>
 
     <div class="post reveal">
-      <img src="https://images.unsplash.com/photo-1618939304343-41a658223951?auto=format&fit=crop&w=800&q=80" alt="A person receiving a vaccine shot in the arm" loading="lazy">
+      <img src="images/vaccine-hero.jpg" alt="Healthcare worker administering a vaccine" loading="lazy">
       <h3>How Vaccines Work</h3>
       <p>Training the immune system to fight disease.</p>
       <a href="post3.html">Read More</a>
     </div>
 
     <div class="post reveal">
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="A doctor explaining information on a laptop to a patient" loading="lazy">
+      <img src="images/myths-hero.jpg" alt="Historic apothecary shop interior" loading="lazy">
       <h3>Pharmacy Myths and Facts</h3>
       <p>Separating evidence from misinformation in everyday care.</p>
       <a href="post4.html">Read More</a>
     </div>
   </section>
 
-  <section class="newsletter">
+  <section class="newsletter" id="newsletter">
     <h2>Join the Apothecaries Circle</h2>
     <p class="newsletter-note">Monthly dispatches on science, history, and the future of medicine.</p>
-    <form class="newsletter-form" action="#" method="post">
-      <label class="sr-only" for="newsletter-name">Name</label>
-      <input id="newsletter-name" name="name" type="text" placeholder="Your name" autocomplete="name">
-      <label class="sr-only" for="newsletter-email">Email</label>
-      <input id="newsletter-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
-      <button type="submit">Subscribe</button>
+    <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="4e21cb9f-ba42-4fda-ae42-3759d0f2baae">
+      <input type="text" name="name" required>
+      <input type="email" name="email" required>
+      <textarea name="message" required></textarea>
+      <button type="submit">Submit Form</button>
     </form>
-    <p class="newsletter-privacy">No spam. Unsubscribe anytime.</p>
+    <div class="newsletter-status" role="status" aria-live="polite" hidden></div>
+    <p class="newsletter-privacy" id="newsletter-privacy">No spam. Unsubscribe anytime.</p>
   </section>
 
   <section class="support-strip">
@@ -115,7 +102,10 @@
     <p>© 2026 Apothecaries Blog</p>
     <p class="developer-credit">Developed by Robera Melka Negasa</p>
   </div>
-  <a href="#" class="footer-link">Back to Top</a>
+  <div class="footer-links">
+    <a href="credits.html" class="footer-link">Image Credits</a>
+    <a href="#" class="footer-link">Back to Top</a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
