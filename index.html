@@ -17,23 +17,23 @@
 <header class="navbar">
   <div class="logo">Apothecaries Journal</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="articles.html">Articles</a>
-    <a href="topics.html">Topics</a>
-    <a href="about.html">About</a>
+    <a href="#home">Home</a>
+    <a href="#articles">Articles</a>
+    <a href="#topics">Topics</a>
+    <a href="#about">About</a>
   </nav>
   <button id="darkToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
 </header>
 
 <main id="main">
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-inner">
       <p class="hero-label">Apothecaries Journal</p>
       <h1>Apothecaries</h1>
       <p>Exploring the science, history, and future of medicine</p>
       <div class="hero-actions">
-        <a class="pill" href="articles.html">Browse Articles</a>
-        <a class="pill pill-ghost" href="topics.html">Explore Topics</a>
+        <a class="pill" href="#articles">Browse Articles</a>
+        <a class="pill pill-ghost" href="#topics">Explore Topics</a>
       </div>
     </div>
   </section>
@@ -63,7 +63,7 @@
       </div>
       <div class="featured-actions">
         <a class="pill" href="post1.html">Read the Feature</a>
-        <a class="pill pill-ghost" href="articles.html">See All Stories</a>
+        <a class="pill pill-ghost" href="#articles">See All Stories</a>
       </div>
     </div>
   </section>
@@ -73,7 +73,7 @@
     <input id="searchBar" type="text" placeholder="Search pharmacy topics...">
   </section>
 
-  <section class="posts">
+  <section class="posts" id="articles">
     <div class="section-header reveal">
       <h2>Latest Articles</h2>
       <p>Fresh perspectives from the frontiers of pharmacy and care.</p>
@@ -107,20 +107,29 @@
     </div>
   </section>
 
-  <section class="topics-preview reveal">
-    <div class="section-header">
+  <section class="split-panels reveal" aria-label="About and topics">
+    <section class="panel about-panel" id="about">
+      <p class="eyebrow">About</p>
+      <h2>About the Journal</h2>
+      <p>Apothecaries Blog explores the science and stories behind medicines, from ancient herbal traditions to modern pharmaceutical research.</p>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Apothecary%20Shop,%20Interior%201.jpg" alt="Apothecary shop interior" class="about-image" loading="lazy" width="900" height="650">
+      <p>We translate complex research into clear, practical insights for readers who want evidence with context.</p>
+      <a class="pill pill-ghost" href="#newsletter">Join the newsletter</a>
+    </section>
+    <section class="panel topics-panel" id="topics">
+      <p class="eyebrow">Topics</p>
       <h2>Explore Topics</h2>
       <p>Curated areas of pharmacy and medicine, from discovery to public health.</p>
-    </div>
-    <div class="topic-chips">
-      <a class="topic-chip" href="topics.html">Drug Discovery</a>
-      <a class="topic-chip" href="topics.html">Medicinal Chemistry</a>
-      <a class="topic-chip" href="topics.html">Clinical Pharmacology</a>
-      <a class="topic-chip" href="topics.html">Toxicology</a>
-      <a class="topic-chip" href="topics.html">Pharmacy History</a>
-      <a class="topic-chip" href="topics.html">Public Health</a>
-    </div>
-    <a class="topics-link" href="topics.html">View all topics</a>
+      <div class="topic-chips">
+        <a class="topic-chip" href="#articles">Drug Discovery</a>
+        <a class="topic-chip" href="#articles">Medicinal Chemistry</a>
+        <a class="topic-chip" href="#articles">Clinical Pharmacology</a>
+        <a class="topic-chip" href="#articles">Toxicology</a>
+        <a class="topic-chip" href="#articles">Pharmacy History</a>
+        <a class="topic-chip" href="#articles">Public Health</a>
+      </div>
+      <a class="topics-link" href="#articles">See related articles</a>
+    </section>
   </section>
 
   <section class="editorial reveal">
@@ -163,10 +172,19 @@
     <p class="newsletter-note">Monthly dispatches on science, history, and the future of medicine.</p>
     <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="4e21cb9f-ba42-4fda-ae42-3759d0f2baae">
-      <input type="text" name="name" required>
-      <input type="email" name="email" required>
-      <textarea name="message" required></textarea>
-      <button type="submit">Submit Form</button>
+      <div class="field">
+        <label for="subscriber-name">Name</label>
+        <input id="subscriber-name" type="text" name="name" autocomplete="name" placeholder="Your full name" required>
+      </div>
+      <div class="field">
+        <label for="subscriber-email">Email</label>
+        <input id="subscriber-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+      </div>
+      <div class="field full">
+        <label for="subscriber-message">Message</label>
+        <textarea id="subscriber-message" name="message" placeholder="What topics are you curious about?" required></textarea>
+      </div>
+      <button type="submit">Subscribe</button>
     </form>
     <div class="newsletter-status" role="status" aria-live="polite" hidden></div>
     <p class="newsletter-privacy" id="newsletter-privacy">No spam. Unsubscribe anytime.</p>
@@ -174,7 +192,7 @@
 
   <section class="support-strip">
     <p class="support-note">Find value in our research? Help keep the journal independent.</p>
-    <a href="#" class="btn-donate">☕ Support the Journal</a>
+    <a href="https://gurshaplus.com/apothecariwu" class="btn-donate">☕ Support the Journal</a>
   </section>
 </main>
 

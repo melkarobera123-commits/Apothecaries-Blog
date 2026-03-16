@@ -33,6 +33,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+section[id] {
+  scroll-margin-top: 110px;
+}
+
 h1, h2, h3, .deck, .hero p {
   text-wrap: balance;
 }
@@ -651,6 +655,52 @@ nav a:focus,
   color: var(--accent-2);
 }
 
+/* ===== Split Panels ===== */
+.split-panels {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.panel {
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel h2 {
+  margin: 0;
+  font-family: var(--serif);
+}
+
+.panel p {
+  margin: 0;
+  color: #5a4c40;
+  line-height: 1.6;
+}
+
+.panel .about-image {
+  height: 260px;
+  margin: 6px 0;
+}
+
+.panel .topic-chips {
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+.panel .topic-chip {
+  background: rgba(255, 255, 255, 0.95);
+}
+
 /* ===== Editorial ===== */
 .editorial {
   max-width: 1100px;
@@ -839,6 +889,23 @@ nav a:focus,
   position: relative;
   z-index: 1;
   backdrop-filter: blur(6px);
+}
+
+.newsletter-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.newsletter-form .field.full {
+  grid-column: 1 / -1;
+}
+
+.newsletter-form label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: #4a3f35;
 }
 
 .newsletter-form input,
@@ -1541,6 +1608,7 @@ body.dark .post,
 body.dark .newsletter,
 body.dark .takeaways,
 body.dark .topic,
+body.dark .panel,
 body.dark .credit-list li,
 body.dark .aside-panel,
 body.dark .stat-card,
@@ -1565,6 +1633,7 @@ body.dark .post {
 
 body.dark .post p,
 body.dark .section-header p,
+body.dark .panel p,
 body.dark .issue-bar {
   color: #c8c8c8;
 }
@@ -1657,6 +1726,10 @@ body.dark .newsletter::after {
 body.dark .newsletter-form {
   background: rgba(13, 16, 24, 0.6);
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .newsletter-form label {
+  color: #d7d0c7;
 }
 
 body.dark .newsletter input,

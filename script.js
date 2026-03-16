@@ -25,8 +25,26 @@ window.addEventListener("load", () => {
 
 // ===================== Active Navigation Link =====================
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const currentHash = window.location.hash || "#home";
 document.querySelectorAll("nav a").forEach(link => {
-  const isActive = link.getAttribute("href") === currentPage;
+  const href = link.getAttribute("href") || "";
+  let isActive = false;
+
+  if (href.startsWith("#")) {
+    if (currentPage === "index.html") {
+      isActive = href === currentHash;
+    }
+  } else if (href.includes("#")) {
+    const [path, hash] = href.split("#");
+    const resolvedPath = path || "index.html";
+    const resolvedHash = `#${hash}`;
+    if (currentPage === resolvedPath) {
+      isActive = resolvedHash === currentHash;
+    }
+  } else {
+    isActive = href === currentPage;
+  }
+
   link.classList.toggle("active", isActive);
   if (isActive) {
     link.setAttribute("aria-current", "page");
