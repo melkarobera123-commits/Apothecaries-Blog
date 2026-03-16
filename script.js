@@ -1,6 +1,10 @@
 ﻿﻿// ===================== Global Image Error Handler =====================
+﻿﻿// ===================== Global Image Error Handler =====================
 document.addEventListener("error", (e) => {
   if (e.target.tagName.toLowerCase() === "img") {
+    if (e.target.dataset.fallbackApplied === "1") return;
+    e.target.dataset.fallbackApplied = "1";
+    e.target.src = "images/placeholder.svg";
     e.target.onerror = null; // Prevent infinite loop
     e.target.src = "https://placehold.co/600x400?text=Image+Unavailable";
     e.target.alt = "Image unavailable";
@@ -120,3 +124,14 @@ if(searchBar){
     noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
   });
 }
+
+// ===================== Mouse Spotlight Effect =====================
+document.querySelectorAll('.post').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
