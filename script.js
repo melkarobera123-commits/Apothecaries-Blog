@@ -190,6 +190,50 @@ if (newsletterStatus) {
   }
 }
 
+// ===================== Share Links =====================
+const shareBars = document.querySelectorAll(".share-bar");
+shareBars.forEach((bar) => {
+  const pageUrl = window.location.href;
+  const pageTitle = bar.dataset.title || document.title;
+  const shareStatus = bar.querySelector(".share-status");
+
+  const setStatus = (message) => {
+    if (!shareStatus) return;
+    shareStatus.textContent = message;
+    if (!message) return;
+    window.setTimeout(() => {
+      shareStatus.textContent = "";
+    }, 2200);
+  };
+
+  bar.querySelectorAll("[data-share]").forEach((el) => {
+    const type = el.dataset.share;
+    if (type === "copy") {
+      el.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(pageUrl);
+          setStatus("Link copied.");
+        } catch (err) {
+          setStatus("Unable to copy link.");
+        }
+      });
+      return;
+    }
+
+    if (el.tagName.toLowerCase() !== "a") return;
+    const encodedUrl = encodeURIComponent(pageUrl);
+    const encodedTitle = encodeURIComponent(pageTitle);
+
+    if (type === "x") {
+      el.href = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+    } else if (type === "linkedin") {
+      el.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+    } else if (type === "email") {
+      el.href = `mailto:?subject=${encodedTitle}&body=${encodedUrl}`;
+    }
+  });
+});
+
 // ===================== Mouse Spotlight Effect =====================
 document.querySelectorAll('.post').forEach(card => {
   card.addEventListener('mousemove', e => {
