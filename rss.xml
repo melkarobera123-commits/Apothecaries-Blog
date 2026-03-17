@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Apothecaries Journal</title>
+    <link>https://apothecariesjournal.com/</link>
+    <description>Apothecaries Journal explores the science, history, and future of medicine.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Mar 2026 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>The Story of Aspirin</title>
+      <link>https://apothecariesjournal.com/post1.html</link>
+      <guid>https://apothecariesjournal.com/post1.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>From willow bark to a modern medicine cabinet staple, aspirin is a story of observation and chemistry.</description>
+    </item>
+
+    <item>
+      <title>The Discovery of Penicillin</title>
+      <link>https://apothecariesjournal.com/post2.html</link>
+      <guid>https://apothecariesjournal.com/post2.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>A chance encounter in a London lab ignited the antibiotic era and changed medicine forever.</description>
+    </item>
+
+    <item>
+      <title>How Vaccines Work</title>
+      <link>https://apothecariesjournal.com/post3.html</link>
+      <guid>https://apothecariesjournal.com/post3.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Training the immune system to fight disease through safe rehearsal and memory.</description>
+    </item>
+
+    <item>
+      <title>Pharmacy Myths and Facts</title>
+      <link>https://apothecariesjournal.com/post4.html</link>
+      <guid>https://apothecariesjournal.com/post4.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Separating evidence from misinformation in everyday care.</description>
+    </item>
+  </channel>
+</rss>

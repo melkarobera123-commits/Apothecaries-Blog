@@ -384,6 +384,54 @@ nav a:focus,
   box-shadow: 0 0 0 4px rgba(47, 95, 93, 0.1);
 }
 
+/* ===== Article Filters ===== */
+.filters {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.filter-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.filter-field {
+  display: grid;
+  gap: 6px;
+  font-family: var(--sans);
+}
+
+.filter-field label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #6b5a4a;
+  font-weight: 600;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: var(--sans);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 4px rgba(47, 95, 93, 0.1);
+}
+
 /* ===== Home Links ===== */
 .home-links {
   max-width: 1100px;
@@ -447,6 +495,15 @@ nav a:focus,
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.issue-archive {
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 20px 40px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .issue-card {
@@ -860,6 +917,15 @@ nav a:focus,
   font-family: var(--serif);
   font-size: 1.25rem;
   letter-spacing: -0.01em;
+}
+
+.card-meta {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b5a4a;
+  font-weight: 600;
 }
 
 .post p {
@@ -1875,6 +1941,42 @@ h1 {
   color: #4f4f4f;
 }
 
+.disclaimer {
+  margin: 16px 0 24px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: #5a4c40;
+}
+
+.disclaimer strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  color: var(--accent-2);
+  margin-bottom: 6px;
+}
+
+.editorial-note {
+  margin: 0;
+  color: #5a4c40;
+  font-size: 0.95rem;
+}
+
+.last-reviewed {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b5a4a;
+  font-weight: 600;
+}
+
 .author-card {
   margin: 28px 0;
   padding: 20px 22px;
@@ -1911,6 +2013,13 @@ h1 {
   font-family: var(--sans);
   font-size: 0.85rem;
   color: #5a4c40;
+}
+
+.author-cred {
+  margin: 0 0 6px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: #6b5a4a;
 }
 
 .author-bio {
@@ -2247,6 +2356,22 @@ body.dark .search input::placeholder {
   color: #9aa0a6;
 }
 
+body.dark .filter-field label {
+  color: #b8b8b8;
+}
+
+body.dark .filter-field input,
+body.dark .filter-field select {
+  background: rgba(13, 16, 24, 0.9);
+  color: #e6e6e6;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+body.dark .filter-field input::placeholder {
+  color: #9aa0a6;
+}
+
 body.dark .post a {
   color: #d9b27a;
 }
@@ -2342,6 +2467,10 @@ body.dark .cta-list {
 
 body.dark .cta-list a {
   color: #d9b27a;
+}
+
+body.dark .card-meta {
+  color: #b8b8b8;
 }
 
 body.dark .meta,
@@ -2444,9 +2573,31 @@ body.dark .review-note {
   color: #c8c8c8;
 }
 
+body.dark .disclaimer {
+  background: rgba(20, 22, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #c8c8c8;
+}
+
+body.dark .disclaimer strong {
+  color: #d9b27a;
+}
+
+body.dark .editorial-note {
+  color: #c8c8c8;
+}
+
+body.dark .last-reviewed {
+  color: #b8b8b8;
+}
+
 body.dark .author-card {
   background: rgba(20, 22, 30, 0.85);
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .author-cred {
+  color: #c8c8c8;
 }
 
 body.dark .author-role,

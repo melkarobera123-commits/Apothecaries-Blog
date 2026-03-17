@@ -138,33 +138,55 @@ if (tocLinks.length && tocTargets.length) {
   tocTargets.forEach(section => observer.observe(section));
 }
 
-// ===================== Search Articles (Homepage) =====================
+// ===================== Search + Filter Articles =====================
 const searchBar = document.getElementById("searchBar");
-if(searchBar){
+const filterTopic = document.getElementById("filterTopic");
+const filterEra = document.getElementById("filterEra");
+const filterLength = document.getElementById("filterLength");
+
+if (searchBar || filterTopic || filterEra || filterLength) {
   const posts = document.querySelectorAll(".post");
   const postsContainer = document.querySelector(".posts");
 
-  // Create "No Results" message dynamically
   const noResultsMsg = document.createElement("div");
   noResultsMsg.className = "no-results";
-  noResultsMsg.textContent = "No articles found matching your search.";
+  noResultsMsg.textContent = "No articles found matching your filters.";
   noResultsMsg.style.display = "none";
   noResultsMsg.setAttribute("role", "status");
   noResultsMsg.setAttribute("aria-live", "polite");
-  if(postsContainer) postsContainer.appendChild(noResultsMsg);
+  if (postsContainer) postsContainer.appendChild(noResultsMsg);
 
-  searchBar.addEventListener("input", () => {
-    const value = searchBar.value.toLowerCase();
+  const applyFilters = () => {
+    const query = searchBar ? searchBar.value.toLowerCase().trim() : "";
+    const topic = filterTopic ? filterTopic.value : "all";
+    const era = filterEra ? filterEra.value : "all";
+    const length = filterLength ? filterLength.value : "all";
     let visibleCount = 0;
 
-    posts.forEach(post => {
-      const isVisible = post.innerText.toLowerCase().includes(value);
+    posts.forEach((post) => {
+      const textMatch = query === "" || post.innerText.toLowerCase().includes(query);
+      const topicMatch = topic === "all" || post.dataset.topic === topic;
+      const eraMatch = era === "all" || post.dataset.era === era;
+      const lengthMatch = length === "all" || post.dataset.length === length;
+      const isVisible = textMatch && topicMatch && eraMatch && lengthMatch;
+
       post.style.display = isVisible ? "block" : "none";
-      if(isVisible) visibleCount++;
+      if (isVisible) visibleCount += 1;
     });
-    
+
     noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
+  };
+
+  if (searchBar) {
+    searchBar.addEventListener("input", applyFilters);
+  }
+  [filterTopic, filterEra, filterLength].forEach((filter) => {
+    if (filter) {
+      filter.addEventListener("change", applyFilters);
+    }
   });
+
+  applyFilters();
 }
 
 // ===================== Newsletter Status =====================

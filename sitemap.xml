@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>index.html</loc></url>
-  <url><loc>articles.html</loc></url>
-  <url><loc>topics.html</loc></url>
-  <url><loc>about.html</loc></url>
-  <url><loc>credits.html</loc></url>
-  <url><loc>post1.html</loc></url>
-  <url><loc>post2.html</loc></url>
-  <url><loc>post3.html</loc></url>
-  <url><loc>post4.html</loc></url>
-  <url><loc>privacy.html</loc></url>
-  <url><loc>newsletter.html</loc></url>
-  <url><loc>terms.html</loc></url>
-  <url><loc>corrections.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/index.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/articles.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/issues.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/topics.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/about.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/credits.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/post1.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/post2.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/post3.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/post4.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/privacy.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/newsletter.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/terms.html</loc></url>
+  <url><loc>https://apothecariesjournal.com/corrections.html</loc></url>
 </urlset>

@@ -13,12 +13,16 @@
 <meta property="og:title" content="Articles - Apothecaries Blog">
 <meta property="og:description" content="Browse all Apothecaries Journal articles on pharmacy history, discovery, and care.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Pestle%20and%20mortar.jpg">
+<meta property="og:image" content="https://apothecariesjournal.com/images/og-home.svg">
+<meta property="og:image:alt" content="Apothecaries Journal cover art">
+<meta property="og:url" content="https://apothecariesjournal.com/articles.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Articles - Apothecaries Blog">
 <meta name="twitter:description" content="Browse all Apothecaries Journal articles on pharmacy history, discovery, and care.">
-<meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Pestle%20and%20mortar.jpg">
-<link rel="canonical" href="articles.html">
+<meta name="twitter:image" content="https://apothecariesjournal.com/images/og-home.svg">
+<meta name="twitter:image:alt" content="Apothecaries Journal cover art">
+<link rel="canonical" href="https://apothecariesjournal.com/articles.html">
+<link rel="alternate" type="application/rss+xml" title="Apothecaries Journal RSS" href="https://apothecariesjournal.com/rss.xml">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
   {
@@ -26,7 +30,7 @@
     "@type": "CollectionPage",
     "name": "Articles - Apothecaries Blog",
     "description": "Browse all Apothecaries Journal articles on pharmacy history, discovery, and care.",
-    "url": "articles.html",
+    "url": "https://apothecariesjournal.com/articles.html",
     "publisher": {
       "@type": "Organization",
       "name": "Apothecaries Blog"
@@ -35,13 +39,19 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="skip-links">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#filters">Skip to filters</a>
+  <a class="skip-link" href="#posts">Skip to articles</a>
+  <a class="skip-link" href="#footer">Skip to footer</a>
+</div>
 
 <header class="navbar">
   <div class="logo">Apothecaries Journal</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="articles.html">Articles</a>
+    <a href="issues.html">Issues</a>
     <a href="topics.html">Topics</a>
     <a href="about.html">About</a>
   </nav>
@@ -49,31 +59,76 @@
 </header>
 
 <main id="main">
-  <section id="posts" class="posts">
+  <section class="section-header">
     <h2>All Articles</h2>
-    <div class="post">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pestle%20and%20mortar.jpg" alt="Mortar and pestle used in traditional medicine" loading="lazy" decoding="async" width="800" height="600">
+    <p>Search, filter, and explore every story in the journal.</p>
+  </section>
+
+  <section class="filters" id="filters" aria-label="Filter articles">
+    <div class="filter-grid">
+      <div class="filter-field">
+        <label for="searchBar">Search</label>
+        <input id="searchBar" type="search" placeholder="Search by title or topic" autocomplete="off">
+      </div>
+      <div class="filter-field">
+        <label for="filterTopic">Topic</label>
+        <select id="filterTopic">
+          <option value="all">All topics</option>
+          <option value="history">History</option>
+          <option value="milestones">Medical milestones</option>
+          <option value="immunology">Immunology</option>
+          <option value="public-health">Public health</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filterEra">Era</label>
+        <select id="filterEra">
+          <option value="all">All eras</option>
+          <option value="1800s">1800s</option>
+          <option value="1900s">1900s</option>
+          <option value="today">Today</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filterLength">Length</label>
+        <select id="filterLength">
+          <option value="all">All lengths</option>
+          <option value="short">Short (≤5 min)</option>
+          <option value="medium">Medium (6-8 min)</option>
+          <option value="long">Long (9+ min)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section id="posts" class="posts">
+    <div class="post" data-topic="history" data-era="1800s" data-length="short">
+      <img src="images/aspirin-hero.jpg" srcset="images/aspirin-hero.jpg 1200w" sizes="(max-width: 700px) 90vw, 320px" alt="Aspirin tablets and a mortar used in traditional medicine" loading="lazy" decoding="async" width="1200" height="800">
+      <p class="card-meta">5 min read · Pharmacy History</p>
       <h3>The Story of Aspirin</h3>
       <p>How willow bark became the world's most famous medicine.</p>
       <a href="post1.html">Read More</a>
     </div>
 
-    <div class="post">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Penicillium%20glabrum%20conidiophores.jpg" alt="Penicillium conidiophores under a microscope" loading="lazy" decoding="async" width="800" height="600">
+    <div class="post" data-topic="milestones" data-era="1900s" data-length="medium">
+      <img src="images/penicillin-hero.jpg" srcset="images/penicillin-hero.jpg 1200w" sizes="(max-width: 700px) 90vw, 320px" alt="Penicillin culture in a laboratory setting" loading="lazy" decoding="async" width="1200" height="800">
+      <p class="card-meta">6 min read · Medical Milestones</p>
       <h3>Penicillin Discovery</h3>
       <p>The accidental discovery that changed medicine forever.</p>
       <a href="post2.html">Read More</a>
     </div>
 
-    <div class="post">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vaccination.jpg" alt="Healthcare worker administering a vaccine" loading="lazy" decoding="async" width="800" height="600">
+    <div class="post" data-topic="immunology" data-era="1900s" data-length="short">
+      <img src="images/vaccine-hero.jpg" srcset="images/vaccine-hero.jpg 1200w" sizes="(max-width: 700px) 90vw, 320px" alt="Healthcare worker preparing a vaccine" loading="lazy" decoding="async" width="1200" height="800">
+      <p class="card-meta">5 min read · Immunology</p>
       <h3>How Vaccines Work</h3>
       <p>Training the immune system to fight disease.</p>
       <a href="post3.html">Read More</a>
     </div>
 
-    <div class="post">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Apothecary%20Shop,%20Interior%202.jpg" alt="Historic apothecary shop interior" loading="lazy" decoding="async" width="800" height="600">
+    <div class="post" data-topic="public-health" data-era="today" data-length="short">
+      <img src="images/myths-hero.jpg" srcset="images/myths-hero.jpg 1200w" sizes="(max-width: 700px) 90vw, 320px" alt="Historic apothecary shop interior" loading="lazy" decoding="async" width="1200" height="800">
+      <p class="card-meta">5 min read · Public Health</p>
       <h3>Pharmacy Myths and Facts</h3>
       <p>Separating evidence from misinformation in everyday care.</p>
       <a href="post4.html">Read More</a>
@@ -81,7 +136,7 @@
   </section>
 </main>
 
-<footer>
+<footer id="footer">
   <div>
     <p>&copy; 2026 Apothecaries Blog</p>
     <p class="developer-credit">Developed by Robera Melka Negasa</p>
