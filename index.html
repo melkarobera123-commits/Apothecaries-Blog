@@ -13,11 +13,13 @@
 <meta property="og:title" content="Apothecaries Blog">
 <meta property="og:description" content="Apothecaries Journal explores the science, history, and future of medicine.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Pestle%20and%20mortar.jpg">
+<meta property="og:image" content="images/og-home.svg">
+<meta property="og:image:alt" content="Apothecaries Journal cover art">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Apothecaries Blog">
 <meta name="twitter:description" content="Apothecaries Journal explores the science, history, and future of medicine.">
-<meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Pestle%20and%20mortar.jpg">
+<meta name="twitter:image" content="images/og-home.svg">
+<meta name="twitter:image:alt" content="Apothecaries Journal cover art">
 <link rel="canonical" href="index.html">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
@@ -35,7 +37,12 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="skip-links">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#current-issue">Skip to current issue</a>
+  <a class="skip-link" href="#popular">Skip to popular stories</a>
+  <a class="skip-link" href="#newsletter-cta">Skip to newsletter</a>
+</div>
 <div class="reading-progress" aria-hidden="true"><span></span></div>
 
 <header class="navbar">
@@ -59,6 +66,9 @@
         <a class="pill" href="articles.html">Browse Articles</a>
         <a class="pill pill-ghost" href="topics.html">Explore Topics</a>
       </div>
+      <div class="hero-media">
+        <img src="images/hero-apothecaries.svg" alt="Abstract apothecary illustration" loading="eager" decoding="async" width="640" height="420">
+      </div>
     </div>
   </section>
 
@@ -70,6 +80,28 @@
       <li>Research-backed</li>
       <li>Reader-supported</li>
     </ul>
+  </section>
+
+  <section class="current-issue reveal" id="current-issue">
+    <div class="section-header">
+      <h2>Current Issue</h2>
+      <p>Issue 09 · March 2026 · Medicine in Motion</p>
+    </div>
+    <div class="issue-grid">
+      <div class="issue-card">
+        <h3>Theme</h3>
+        <p>How discovery moves from observation to therapy, and the people who make it possible.</p>
+        <a class="topics-link" href="articles.html">Explore this issue</a>
+      </div>
+      <div class="issue-card">
+        <h3>Featured in this issue</h3>
+        <ul class="issue-list">
+          <li><a href="post1.html">The Story of Aspirin</a><span>Pharmacy History</span></li>
+          <li><a href="post2.html">The Discovery of Penicillin</a><span>Medical Milestones</span></li>
+          <li><a href="post3.html">How Vaccines Work</a><span>Immunology</span></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="featured reveal" id="featured">
@@ -92,7 +124,20 @@
     </div>
   </section>
 
-  <section class="home-links reveal" aria-label="Explore the journal">
+  <section class="popular reveal" id="popular">
+    <div class="section-header">
+      <h2>Popular This Month</h2>
+      <p>The stories readers are spending the most time with.</p>
+    </div>
+    <ol class="popular-list">
+      <li><a href="post2.html">The Discovery of Penicillin</a><span>Medical Milestones</span></li>
+      <li><a href="post1.html">The Story of Aspirin</a><span>Pharmacy History</span></li>
+      <li><a href="post3.html">How Vaccines Work</a><span>Immunology</span></li>
+      <li><a href="post4.html">Pharmacy Myths and Facts</a><span>Public Health</span></li>
+    </ol>
+  </section>
+
+  <section class="home-links reveal" id="explore" aria-label="Explore the journal">
     <div class="section-header">
       <h2>Explore the Journal</h2>
       <p>Jump directly to the sections that interest you.</p>
@@ -121,10 +166,64 @@
     </div>
   </section>
 
-  <section class="newsletter-cta reveal">
-    <h2>Stay close to the research</h2>
-    <p>Subscribe for monthly stories and editorial notes.</p>
-    <a class="pill" href="newsletter.html">Subscribe to the newsletter</a>
+  <section class="standards reveal" id="standards">
+    <div class="standards-card">
+      <h2>Editorial Standards</h2>
+      <p>Every story is reviewed for clarity, evidence, and historical accuracy.</p>
+      <ul>
+        <li>Primary sources and reputable references for key claims.</li>
+        <li>Clear disclosure of uncertainty or evolving evidence.</li>
+        <li>Corrections published with transparent updates.</li>
+      </ul>
+      <div class="standards-links">
+        <a class="topics-link" href="corrections.html">Corrections policy</a>
+        <a class="topics-link" href="credits.html">Image credits</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlight reveal" id="editor">
+    <div class="spotlight-card">
+      <div class="spotlight-avatar" aria-hidden="true">RM</div>
+      <div class="spotlight-content">
+        <p class="eyebrow">Editor Spotlight</p>
+        <h2>Robera Melka Negasa</h2>
+        <p>Editor-in-Chief focused on translating complex research into clear, practical insight.</p>
+        <a class="topics-link" href="about.html">Meet the editorial team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="press-strip reveal" id="community">
+    <p class="press-label">Community Notes</p>
+    <div class="press-grid">
+      <blockquote class="press-quote">
+        “Apothecaries Journal turns dense research into elegant narratives.”
+        <cite>— Clinical Pharmacist</cite>
+      </blockquote>
+      <blockquote class="press-quote">
+        “The historical context is exceptional. It’s the first newsletter I finish.”
+        <cite>— Medical Student</cite>
+      </blockquote>
+      <blockquote class="press-quote">
+        “Clear, credible, and beautifully designed.”
+        <cite>— Health Policy Analyst</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="newsletter-cta reveal" id="newsletter-cta">
+    <h2>Join the Apothecaries Circle</h2>
+    <p>Monthly dispatches on science, history, and the future of medicine.</p>
+    <ul class="cta-list">
+      <li>One issue per month with curated reads.</li>
+      <li>No spam, unsubscribe anytime.</li>
+      <li>Sample issue: <a href="post1.html">The Story of Aspirin</a></li>
+    </ul>
+    <div class="cta-actions">
+      <a class="pill" href="newsletter.html">Subscribe to the newsletter</a>
+      <a class="pill pill-ghost" href="articles.html">Browse the archive</a>
+    </div>
   </section>
 
   <section class="support-strip">
