@@ -1746,6 +1746,59 @@ h1 {
   background: #d4a76a;
 }
 
+/* ===== Legal + Utility Pages ===== */
+.legal,
+.error-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: var(--sans);
+}
+
+.error-page {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.legal h2,
+.error-page h1 {
+  font-family: var(--serif);
+  margin-bottom: 12px;
+}
+
+.legal-card {
+  margin: 20px 0;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-soft);
+}
+
+.legal-card h3 {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--accent-2);
+}
+
+.legal-card p,
+.legal-card li {
+  color: #5a4c40;
+  margin: 0 0 10px;
+}
+
+.legal-card ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.legal > p {
+  color: #5a4c40;
+  font-size: 0.95rem;
+}
+
 /* ===== Reveal ===== */
 .reveal {
   opacity: 0;
@@ -2122,6 +2175,20 @@ body.dark .support-strip {
 
 body.dark .support-note {
   color: #c6c6c6;
+}
+
+body.dark .legal-card {
+  background: rgba(20, 22, 30, 0.8);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .legal-card p,
+body.dark .legal-card li {
+  color: #c8c8c8;
+}
+
+body.dark .legal > p {
+  color: #c8c8c8;
 }
 
 body.dark .btn-donate {
